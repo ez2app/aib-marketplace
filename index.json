@@ -1,10 +1,10 @@
 {
   "schema": "aib-marketplace/v1",
-  "updated_at": "2026-11-24T07:38:00Z",
+  "updated_at": "2026-11-24T11:30:00Z",
   "plugins": [
     {
       "name": "aib-skipstop",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "summary": "Skip what need not run again, stop what is sure to fail, and keep the book of what that saved.",
       "license": "Apache-2.0",
       "homepage": "https://github.com/lfu0327/aib-skipstop",
@@ -13,21 +13,21 @@
       "paid": false,
       "default": "on",
       "manifest": {
-        "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.1/aib-plugin.json",
-        "sha256": "c3055622e439d8cd8803b84afc2e8ca7521324c4eab13749f04fd9e84f31a1cb"
+        "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.2/aib-plugin.json",
+        "sha256": "c3d986883efe379ba4197ad9ff798b9381b930cf82c424d4acdcaae8ace7dc50"
       },
       "targets": {
         "aarch64-apple-darwin": {
-          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.1/aib-skipstop-0.4.1-aarch64-apple-darwin",
-          "sha256": "f6242a3eb930b8e99dec55d80604a326b45871090da50365ab58c95ce152bd5b"
+          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.2/aib-skipstop-0.4.2-aarch64-apple-darwin",
+          "sha256": "2d386485c92e54333b71958460d10c89a6a29d2522d911c39903ded2d4ae03a3"
         },
         "x86_64-pc-windows-msvc": {
-          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.1/aib-skipstop-0.4.1-x86_64-pc-windows-msvc.exe",
-          "sha256": "8d2c148175ec2fb0c68b1c2644350cb0860d8808d5aac1238accf4f6042956a1"
+          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.2/aib-skipstop-0.4.2-x86_64-pc-windows-msvc.exe",
+          "sha256": "6a48cdeeb51d46149ed156c04df705cd322eabba4ea45d89fc4ea09268bd91f2"
         },
         "x86_64-unknown-linux-gnu": {
-          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.1/aib-skipstop-0.4.1-x86_64-unknown-linux-gnu",
-          "sha256": "a28218177b81d510bf3264755435b6e8915a0306a0fcaf470b0b37b47e849b09"
+          "url": "https://github.com/lfu0327/aib-skipstop/releases/download/v0.4.2/aib-skipstop-0.4.2-x86_64-unknown-linux-gnu",
+          "sha256": "49b222215db1b8d8ed16f560bfdfa306e2950cdbdbaf961f714dea958ed33a98"
         }
       }
     }
