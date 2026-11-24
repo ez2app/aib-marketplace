@@ -1,0 +1,36 @@
+name: check
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+jobs:
+  schema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: validate index.json
+        run: |
+          python3 - <<'PY'
+          import json, re
+          d = json.load(open("index.json", encoding="utf-8"))
+          assert d.get("schema") == "aib-marketplace/v1", "bad schema"
+          plugins = d.get("plugins")
+          assert isinstance(plugins, list) and plugins, "plugins must be non-empty list"
+          seen = set()
+          hex64 = re.compile(r"^[0-9a-f]{64}$")
+          for p in plugins:
+              name = p["name"]
+              assert re.match(r"^[a-z0-9][a-z0-9-]{1,48}$", name), f"bad name: {name}"
+              assert name not in seen, f"duplicate: {name}"
+              seen.add(name)
+              assert p["manifest"]["url"].startswith("https://")
+              assert hex64.match(p["manifest"]["sha256"]), f"bad manifest sha256: {name}"
+              assert p.get("targets"), f"missing targets: {name}"
+              for t, info in p["targets"].items():
+                  assert info["url"].startswith("https://"), f"bad url: {name}/{t}"
+                  assert hex64.match(info["sha256"]), f"bad sha256: {name}/{t}"
+          print(f"OK: {len(plugins)} plugin(s) validated")
+          PY
